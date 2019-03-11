@@ -19,7 +19,8 @@ class MakeTableMaterials extends Migration
             $table->string('content');
             $table->timestamps();
             $table->softDeletes();
-            $table->index(["created_at desc","deleted_at"]);
+            $table->dropIndex(['ind_mater_ix02']);
+            $table->index(["created_at desc","deleted_at"],'ind_mater_ix02');
         });
     }
 
